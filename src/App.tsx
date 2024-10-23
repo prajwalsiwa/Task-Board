@@ -59,7 +59,9 @@ export default function App() {
       {process.env.NODE_ENV !== 'production' &&
         !process.env.DISABLE_DOM_TO_CODE &&
         initDomToCode()}
-      <div className={`${hideSideBar ? 'ml-0' : `ml-0 flex md:ml-[80px]`}`}>
+      <div
+        className={`${hideSideBar ? 'ml-0 h-screen w-screen overflow-hidden' : `ml-0 flex h-screen w-screen overflow-hidden bg-white`}`}
+      >
         <ToastContainer />
 
         <Modal
