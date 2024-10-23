@@ -18,6 +18,7 @@ import {
   getModalContent,
   getPromptDialogContent,
 } from '@Constants/modalContents';
+import SideBar from '@Views/Sidebar';
 
 export default function App() {
   const { pathname } = useLocation();
@@ -81,6 +82,8 @@ export default function App() {
         >
           {getPromptDialogContent(promptDialogContent)?.content}
         </PromptDialog>
+
+        <SideBar />
 
         {generateRoutes({
           routes:

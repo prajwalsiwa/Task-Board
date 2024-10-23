@@ -5,7 +5,7 @@ import { IRoute } from './types';
 const appRoutes: IRoute[] = [
   {
     path: '/',
-    name: 'Dashboard ',
+    name: 'Dashboard',
     component: Dashboard,
     authenticated: false,
   },
