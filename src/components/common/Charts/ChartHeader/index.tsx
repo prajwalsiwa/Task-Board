@@ -1,8 +1,8 @@
 import { useCallback } from 'react';
 import Papa from 'papaparse';
-import FileSaver from 'file-saver';
 import useOutsideClick from '@Hooks/useOutsideClick';
 import ToolTip from '@Components/RadixComponents/ToolTip';
+import FileSaver from 'file-saver';
 import { FlexColumn } from '@Components/common/Layouts';
 import CaptureComponent from '../CaptureComponent';
 
