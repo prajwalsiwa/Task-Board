@@ -6,7 +6,7 @@ export const ChartFills = [
   '#00947C',
 ];
 
-export const BarChartFills = ['#0664D2', '#FF9525', '#0664D2'];
+export const BarChartFills = ['#475569', '#FF9525', '#0664D2'];
 
 export const StackedChartFills = ['#0664D2', '#FF9525', '#42b4a2'];
 
