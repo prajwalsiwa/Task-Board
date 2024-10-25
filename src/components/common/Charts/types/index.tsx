@@ -4,6 +4,7 @@ export interface IChartProps {
   fills?: string[];
   scrollable?: boolean;
   width?: string;
+  hasinnerRadius?: boolean;
 }
 
 export type ChartTypes =
@@ -29,7 +30,7 @@ export interface IDonutLegendItemProps {
   color: string;
   name: string;
   value: number | string;
-  percentage: number | string;
+  percentage?: number | string;
 }
 
 export interface ILegendItemProps {
