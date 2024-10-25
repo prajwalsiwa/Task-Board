@@ -4,6 +4,7 @@ export default function DonutLegendItem({
   color,
   name,
   percentage,
+  value,
 }: IDonutLegendItemProps) {
   return (
     <div className="flex items-center justify-between text-sm text-grey-800">
@@ -18,7 +19,7 @@ export default function DonutLegendItem({
       </div>
       <div className="value-percentage flex min-w-[2rem] items-center justify-end gap-2 font-bold">
         <div className="button min-w-[60px] max-w-[60px] whitespace-nowrap text-start ">
-          {Number(percentage)?.toFixed(1)} %
+          {percentage ? `${Number(percentage)?.toFixed(1)} %` : value}
         </div>
       </div>
     </div>
