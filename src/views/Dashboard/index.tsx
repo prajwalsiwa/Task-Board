@@ -2,7 +2,9 @@
 /* eslint-disable react/no-unstable-nested-components */
 import Card from '@Components/Card';
 import PriorityChart from '@Components/Dashboard/PriorityChart';
+import TasksTable from '@Components/Dashboard/TasksTable';
 import UserChart from '@Components/Dashboard/UserChart';
+import Users from '@Components/Dashboard/Users';
 
 const cardList = [
   {
@@ -47,6 +49,10 @@ export default function Dashboard() {
       <div className="flex w-full  gap-4">
         <UserChart />
         <PriorityChart />
+      </div>
+      <div className="flex w-full gap-4">
+        <TasksTable />
+        <Users />
       </div>
     </div>
   );
