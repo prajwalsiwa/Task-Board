@@ -20,12 +20,16 @@ const CustomTooltip = ({ active, payload }: any) => {
   return null;
 };
 
-export default function CustomDonutChart({ data, fills }: IChartProps) {
+export default function CustomDonutChart({
+  data,
+  fills,
+  hasinnerRadius = false,
+}: IChartProps) {
   return (
     <ResponsiveContainer
       width="100%"
       height="100%"
-      minHeight={170}
+      minHeight={250}
       maxHeight={190}
     >
       <PieChart>
@@ -37,7 +41,7 @@ export default function CustomDonutChart({ data, fills }: IChartProps) {
           fill="#8884d8"
           dataKey="value"
           outerRadius="90%"
-          innerRadius={52}
+          innerRadius={hasinnerRadius ? 52 : 0}
           paddingAngle={0}
         >
           {data?.map((_entry: any, index: number) => (
