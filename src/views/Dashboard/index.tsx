@@ -1,7 +1,10 @@
+/* eslint-disable no-nested-ternary */
 /* eslint-disable react/no-unstable-nested-components */
 import Card from '@Components/Card';
-import ChartContainer from '@Components/common/Charts/ChartContainer';
-import ChartHeader from '@Components/common/Charts/ChartHeader';
+import PriorityChart from '@Components/Dashboard/PriorityChart';
+import TasksTable from '@Components/Dashboard/TasksTable';
+import UserChart from '@Components/Dashboard/UserChart';
+import Users from '@Components/Dashboard/Users';
 
 const cardList = [
   {
@@ -30,24 +33,9 @@ const cardList = [
   },
 ];
 
-const priorityList = [
-  {
-    name: 'High',
-    value: 7,
-  },
-  {
-    name: 'Medium',
-    value: 2,
-  },
-  {
-    name: 'Low',
-    value: 1,
-  },
-];
-
 export default function Dashboard() {
   return (
-    <div className="flex h-full w-full flex-col gap-12 p-6">
+    <div className="flex h-full w-full flex-col gap-6 p-6">
       <div className="flex w-full justify-between gap-6">
         {cardList.map(card => (
           <Card
@@ -58,47 +46,13 @@ export default function Dashboard() {
           />
         ))}
       </div>
+      <div className="flex w-full  gap-4">
+        <UserChart />
+        <PriorityChart />
+      </div>
       <div className="flex w-full gap-4">
-        <div className="w-full">
-          <ChartContainer
-            className="h-96"
-            header={props => (
-              <ChartHeader
-                {...props}
-                data={priorityList}
-                chartTitle="Tasks By Priority"
-                hasDownloadBtn
-              />
-            )}
-            type="bar"
-            data={priorityList}
-            xLabel="Priority"
-            yLabel=" Tasks"
-            scrollable={false} // Set to true if scrolling is needed
-            fillWithType // Use specific fills for the chart type
-            chartTitle="helo"
-          />
-        </div>
-        <div className="w-full">
-          <ChartContainer
-            className="h-96"
-            header={props => (
-              <ChartHeader
-                {...props}
-                data={priorityList}
-                chartTitle="Tasks By Priority"
-                hasDownloadBtn
-              />
-            )}
-            type="bar"
-            data={priorityList}
-            xLabel="Priority"
-            yLabel=" Tasks"
-            scrollable={false} // Set to true if scrolling is needed
-            fillWithType // Use specific fills for the chart type
-            chartTitle="helo"
-          />
-        </div>
+        <TasksTable />
+        <Users />
       </div>
     </div>
   );
