@@ -8,7 +8,7 @@ interface cardTypes {
 
 function CardItem({ title, count, iconName }: cardTypes) {
   return (
-    <div className="flex  w-full flex-col gap-1  ">
+    <div className=" flex w-full  flex-col gap-1  ">
       <div className="title">
         <h4 className="!font-normal">{title}</h4>
       </div>
