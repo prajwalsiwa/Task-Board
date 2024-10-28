@@ -35,7 +35,7 @@ const sidebarList = [
 
 function SideBar() {
   return (
-    <div className="h-full w-72 shadow-2xl">
+    <div className="h-full w-72 bg-slate-100 shadow-2xl">
       <div className="flex h-28 items-center px-8">
         <h3>Task Board</h3>
       </div>
