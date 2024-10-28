@@ -1,5 +1,6 @@
 import Dashboard from '@Views/Dashboard';
 import Auth from '@Views/Auth';
+import TaskBoard from '@Views/TaskBoard';
 import { IRoute } from './types';
 
 const appRoutes: IRoute[] = [
@@ -13,6 +14,12 @@ const appRoutes: IRoute[] = [
     path: '/login',
     name: 'Authentication',
     component: Auth,
+    authenticated: false,
+  },
+  {
+    path: '/task-board',
+    name: 'Task Board',
+    component: TaskBoard,
     authenticated: false,
   },
 ];
