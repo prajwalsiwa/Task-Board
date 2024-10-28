@@ -10,7 +10,7 @@ const sidebarList = [
   {
     id: 2,
     name: 'Task Board',
-    path: '/tasks',
+    path: '/task-board',
     iconName: 'task',
   },
   {
@@ -35,14 +35,19 @@ const sidebarList = [
 
 function SideBar() {
   return (
-    <div className="h-full w-72 bg-slate-100 shadow-2xl">
-      <div className="flex h-28 items-center px-8">
-        <h3>Task Board</h3>
+    <div className="flex h-full w-72 flex-col gap-4 bg-slate-100 shadow-2xl">
+      <div className="flex h-20 w-full items-center gap-2  px-3">
+        <div className="flex w-full items-center justify-center gap-2 rounded-lg border py-2 shadow-md">
+          <div className="flex h-8 w-8 items-center justify-center rounded-lg border  bg-gray-500 text-xl font-semibold text-white">
+            T
+          </div>
+          <span className="text-xl font-semibold">Task Board</span>
+        </div>
       </div>
-      <div className="w-full px-4">
-        <hr className="w-full " />
+      <div className="w-full rounded-lg border  px-8 py-4 text-sm font-semibold text-gray-500">
+        MY PAGES
       </div>
-      <div className="flex h-full w-full  flex-col gap-4 px-8 py-8 ">
+      <div className="flex h-full w-full  flex-col gap-4 px-8 py-2 ">
         {sidebarList.map(item => (
           <SidebarItem
             key={item.id}
