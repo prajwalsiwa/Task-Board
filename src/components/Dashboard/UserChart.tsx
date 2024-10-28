@@ -24,14 +24,14 @@ const userTasksList = [
 
 function UserChart() {
   return (
-    <div className="w-full">
+    <div className="h-full w-full">
       <ChartContainer
-        className="h-80"
+        className=" !h-full "
         header={props => (
           <ChartHeader
             {...props}
             data={userTasksList}
-            chartTitle="Tasks of Users"
+            chartTitle="Tasks by Users"
             hasDownloadBtn
           />
         )}
