@@ -84,8 +84,7 @@ export default function CustomBarChart({
   return (
     <ResponsiveContainer
       width={scrollable && width ? width : '100%'}
-      minHeight={200}
-      maxHeight={230}
+      height="100%"
     >
       <BarChart
         data={data}

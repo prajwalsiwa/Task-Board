@@ -29,8 +29,8 @@ export default function CustomDonutChart({
     <ResponsiveContainer
       width="100%"
       height="100%"
-      minHeight={250}
-      maxHeight={190}
+      minHeight={210}
+      maxHeight={210}
     >
       <PieChart>
         <Pie
