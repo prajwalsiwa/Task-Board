@@ -1,4 +1,4 @@
-import SearchInput from '@Components/common/FormUI/SearchInput';
+// import SearchInput from '@Components/common/FormUI/SearchInput';
 import Icon from '@Components/common/Icon';
 
 function NavItem() {
@@ -8,12 +8,12 @@ function NavItem() {
         <div className="flex h-full items-center   ">
           <h4 className="text-white">Main Dashboard</h4>
         </div>
-        <div className="h-full ">
+        {/* <div className="h-full ">
           <SearchInput
             inputValue=""
             className="h-full w-72 rounded-lg bg-white "
           />
-        </div>
+        </div> */}
       </div>
       <div className="flex w-full items-center justify-end gap-4">
         <div className="flex">
