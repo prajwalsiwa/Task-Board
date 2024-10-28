@@ -16,7 +16,7 @@ function SidebarItem({ path, iconName, name }: sideBarItemProps) {
       >
         <button type="button" className="flex h-full w-full items-center gap-2">
           <Icon name={iconName} className="text-gray-600" />
-          <span className="font text-lg text-gray-600">{name}</span>
+          <span className="font text-[1rem]  text-gray-600">{name}</span>
         </button>
       </NavLink>
     </div>
