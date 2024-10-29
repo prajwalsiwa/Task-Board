@@ -1,4 +1,3 @@
-import RoundedContainer from '@Components/common/RoundedContainer';
 import { motion } from 'framer-motion';
 import UsersItem from './UsersItem';
 
@@ -33,19 +32,31 @@ const userList = [
     status: 'Suspend',
     duration: '2 weeks ago',
   },
+  {
+    name: 'Manisha Sharma',
+    role: 'Manager',
+    status: 'Suspend',
+    duration: '2 weeks ago',
+  },
+  {
+    name: 'Manisha',
+    role: 'Manager',
+    status: 'Suspend',
+    duration: '2 weeks ago',
+  },
 ];
 
 function Users() {
   return (
-    <RoundedContainer className="w-full">
-      <div className="flex w-full justify-between border-b p-3">
+    <div className="h-full overflow-hidden border-2 border-black">
+      <div className="flex h-[18%] w-full justify-between border-b p-3">
         <h6 className="font-semibold">Full Name</h6>
         <div className="flex gap-8">
           <h5 className="font-medium">Status</h5>
           <h5 className="font-medium">Created at</h5>
         </div>
       </div>
-      <div className="scrollbar h-[16.5rem] overflow-y-auto pr-4">
+      <div className="scrollbar h-[82%]  overflow-y-auto pr-4">
         {userList.map((user, index) => (
           <motion.div
             key={user.name}
@@ -53,7 +64,7 @@ function Users() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ delay: index * 0.1 }}
-            className="overflow-x-auto  "
+            className="overflow-y-auto  "
           >
             <UsersItem
               key={user.name}
@@ -66,7 +77,7 @@ function Users() {
           </motion.div>
         ))}
       </div>
-    </RoundedContainer>
+    </div>
   );
 }
 

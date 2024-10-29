@@ -49,12 +49,12 @@ export default function ChartContainer<T>({
     <RoundedContainer
       ref={componentRef}
       className={cn(
-        'relative grid h-full w-full grid-cols-12 gap-7 bg-grey-50 px-4 py-2',
+        'relative grid h-full w-full grid-cols-12  bg-grey-50 px-4 py-2',
         className,
       )}
     >
       {hasHeader && header && (
-        <div className="head col-span-12 h-fit">
+        <div className="head col-span-12 h-fit ">
           <div className="cover">
             {header({
               chartTitle,
@@ -74,7 +74,7 @@ export default function ChartContainer<T>({
       ) : null}
 
       <div
-        className={`card ${
+        className={`card !h-[100%] overflow-hidden  ${
           // eslint-disable-next-line no-nested-ternary
           type === 'donut'
             ? 'col-span-12 flex  h-full items-center sm:col-span-6 md:col-span-12 lg:col-span-6 '

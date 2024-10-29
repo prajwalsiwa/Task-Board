@@ -90,25 +90,25 @@ const TasksTable = () => {
 
   return (
     <div
-      className={`  sm:w-[20rem] md:w-[30rem]   lg:!w-full ${isAddtasks ? 'py-[4.8rem]' : ''}`}
+      className={`  !h-[90%]  overflow-hidden sm:w-[20rem] md:w-[30rem]   lg:!w-full ${isAddtasks ? 'py-[4.8rem]' : ''}`}
     >
-      <Table className="w-full">
-        <div className="scrollbar  !max-h-[19.5rem] !w-full overflow-y-auto">
-          <TableHeader>
-            <TableRow className="h-8 ">
+      <div className="scrollbar  !max-h-[100%] !w-full overflow-y-auto  ">
+        <Table className="">
+          <TableHeader className=" w-full">
+            <TableRow className="!h-8 ">
               <TableHead className="w-[5%] text-center !text-xs font-bold text-gray-500">
                 S.N.
               </TableHead>
-              <TableHead className="w-[25%] text-center !text-xs font-bold text-gray-500">
+              <TableHead className="w-[30%] text-center !text-xs font-bold text-gray-500">
                 Name
               </TableHead>
-              <TableHead className="w-[15%] text-center !text-xs font-bold text-gray-500">
+              <TableHead className="w-[10%] text-center !text-xs font-bold text-gray-500">
                 Priority
               </TableHead>
-              <TableHead className="w-[25%] text-center !text-xs font-bold text-gray-500">
+              <TableHead className="w-[20%] text-center !text-xs font-bold text-gray-500">
                 Team
               </TableHead>
-              <TableHead className="w-[10%] text-center !text-xs font-bold text-gray-500">
+              <TableHead className="w-[15%] text-center !text-xs font-bold text-gray-500">
                 Created at
               </TableHead>
             </TableRow>
@@ -121,28 +121,28 @@ const TasksTable = () => {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ delay: index * 0.1 }}
-                className="overflow-x-auto  "
+                className="!max-h-6 overflow-x-auto  "
               >
                 <TableCell className="w-[5%] text-center">
                   {index + 1}
                 </TableCell>
-                <TableCell className="w-[20%] text-center ">
+                <TableCell className="w-[25%] text-center ">
                   {tasks.name}
                 </TableCell>
-                <TableCell className="w-[15%] text-center">
+                <TableCell className="w-[10%] text-center">
                   {tasks.priority}
                 </TableCell>
-                <TableCell className="w-[25%] text-center">
+                <TableCell className="w-[20%] text-center">
                   {tasks.team}
                 </TableCell>
-                <TableCell className="w-[10%] text-center">
+                <TableCell className="w-[15%] text-center">
                   {tasks.createdAt}
                 </TableCell>
               </motion.tr>
             ))}
           </TableBody>
-        </div>
-      </Table>
+        </Table>
+      </div>
     </div>
   );
 };
