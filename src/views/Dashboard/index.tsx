@@ -35,8 +35,8 @@ const cardList = [
 
 export default function Dashboard() {
   return (
-    <div className="flex h-full w-full flex-col gap-6 p-6">
-      <div className="flex w-full justify-between gap-6">
+    <div className="grid  h-full  w-full grid-rows-[12%_35%_35%] flex-col   gap-4  p-6">
+      <div className="flex w-full justify-between gap-6 overflow-hidden border">
         {cardList.map(card => (
           <div
             key={card.id}
@@ -51,11 +51,11 @@ export default function Dashboard() {
           </div>
         ))}
       </div>
-      <div className="flex w-full  gap-4">
+      <div className="flex w-full gap-4 overflow-hidden  ">
         <UserChart />
         <PriorityChart />
       </div>
-      <div className="grid h-80 w-full grid-cols-[60%_39%] gap-4 overflow-hidden pb-10">
+      <div className="grid   h-full w-full grid-cols-[59.5%_40.5%] overflow-hidden  border border-red-800  pb-10">
         <TasksTable />
         <Users />
       </div>

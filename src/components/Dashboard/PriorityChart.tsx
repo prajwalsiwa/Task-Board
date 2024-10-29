@@ -23,17 +23,17 @@ function PriorityChart() {
   const downloadComponentRef = useRef();
 
   return (
-    <div className="relative  h-full w-full rounded-xl  border bg-grey-50 px-4 py-2">
+    <div className="relative  h-full w-[65%] rounded-xl  border bg-grey-50 px-4 py-2">
       <ChartHeader
         chartTitle="Tasks By Priority"
         downloadComponentRef={downloadComponentRef}
       />
-      <div className="flex h-full items-center justify-center gap-2">
+      <div className="flex h-full">
         <CustomDonutChart
           data={priorityList}
           fills={['#4b5563', '#6b7280', '#9ca3af']}
         />
-        <div className="flex h-full w-[25rem] flex-col justify-center ">
+        <div className="flex  w-[20rem] flex-col justify-center ">
           {priorityList.map((priority, index) => (
             <DonutLegendItem
               key={priority.name}

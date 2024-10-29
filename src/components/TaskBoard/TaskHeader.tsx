@@ -7,7 +7,7 @@ function TaskHeader({
 }) {
   return (
     <div
-      className={`flex h-fit w-72 justify-between rounded-lg border border-gray-200 ${color} px-4 py-3`}
+      className={`flex h-fit w-full justify-between rounded-lg border border-gray-200 ${color} px-4 py-3`}
     >
       <div className="flex w-full items-center gap-2">
         <div className="h-4 w-4 rounded-full border-[0.2rem] border-gray-600" />
