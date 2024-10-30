@@ -90,10 +90,10 @@ const TasksTable = () => {
 
   return (
     <div
-      className={`  !h-[90%]  overflow-hidden sm:w-[20rem] md:w-[30rem]   lg:!w-full ${isAddtasks ? 'py-[4.8rem]' : ''}`}
+      className={`  !h-[100%]  !w-full overflow-hidden sm:w-[20rem] ${isAddtasks ? 'py-[4.8rem]' : ''}`}
     >
-      <div className="scrollbar  !max-h-[100%] !w-full overflow-y-auto  ">
-        <Table className="">
+      <Table className="!h-full" containerClassName="!h-full !overflow-hidden">
+        <div className="prajwal  scrollbar !h-full  overflow-auto pb-1">
           <TableHeader className=" w-full">
             <TableRow className="!h-8 ">
               <TableHead className="w-[5%] text-center !text-xs font-bold text-gray-500">
@@ -141,8 +141,8 @@ const TasksTable = () => {
               </motion.tr>
             ))}
           </TableBody>
-        </Table>
-      </div>
+        </div>
+      </Table>
     </div>
   );
 };

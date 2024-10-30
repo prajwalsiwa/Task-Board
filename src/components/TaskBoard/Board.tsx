@@ -9,8 +9,6 @@ function Board() {
         <TaskItem />
         <TaskItem />
         <TaskItem />
-        <TaskItem />
-        <TaskItem />
       </div>
     </div>
   );
