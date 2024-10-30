@@ -48,15 +48,15 @@ const userList = [
 
 function Users() {
   return (
-    <div className="h-full overflow-hidden border-2 border-black">
-      <div className="flex h-[18%] w-full justify-between border-b p-3">
+    <div className="h-full w-full overflow-hidden rounded-xl border">
+      <div className="flex h-fit w-full justify-between border-b p-3">
         <h6 className="font-semibold">Full Name</h6>
         <div className="flex gap-8">
           <h5 className="font-medium">Status</h5>
           <h5 className="font-medium">Created at</h5>
         </div>
       </div>
-      <div className="scrollbar h-[82%]  overflow-y-auto pr-4">
+      <div className="scrollbar h-full  overflow-y-auto pr-4">
         {userList.map((user, index) => (
           <motion.div
             key={user.name}
