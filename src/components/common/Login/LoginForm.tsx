@@ -1,6 +1,6 @@
 import Icon from '@Components/common/Icon';
 import { Button } from '@Components/RadixComponents/Button';
-import googleIcon from '@Assets/images/google.png';
+// import googleIcon from '@Assets/images/google.png';
 import { Input, Label } from '@Components/common/FormUI';
 
 function LoginForm() {
@@ -22,7 +22,7 @@ function LoginForm() {
             </span>
           </div>
           <Button className="flex h-12 w-full items-center gap-2 bg-gray-200 text-lg font-normal text-black">
-            <img className="h-4 w-4" src={googleIcon} alt="" />
+            <img className="h-4 w-4" src="" alt="" />
             <span className="text-md leading-10 tracking-wider">
               Sign in with Google
             </span>
