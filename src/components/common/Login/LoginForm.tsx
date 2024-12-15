@@ -5,7 +5,7 @@ import { Input, Label } from '@Components/common/FormUI';
 
 function LoginForm() {
   return (
-    <div className="flex h-full w-full flex-col items-center   justify-center   ">
+    <div className="flex h-screen w-full flex-col items-center   justify-center   ">
       <div className="flex  flex-col items-center justify-center gap-10 sm:w-[28rem]">
         <div className="flex h-fit w-full gap-2   sm:w-[28rem] md:w-[28rem]">
           <Icon
