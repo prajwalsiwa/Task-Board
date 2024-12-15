@@ -10,7 +10,7 @@ type sidebarTypeObj = {
 
 export interface sidebarState {
   sidebarList: sidebarTypeObj[];
-  activeState: number;
+  activeState: { id: number; name: string };
 }
 
 const initialState: sidebarState = {
@@ -46,7 +46,7 @@ const initialState: sidebarState = {
       iconName: 'assignment',
     },
   ],
-  activeState: 1,
+  activeState: { id: 1, name: 'Main Dashboard' },
 };
 
 const sidebarSlice = createSlice({
