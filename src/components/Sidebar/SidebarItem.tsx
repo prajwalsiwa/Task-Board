@@ -29,7 +29,7 @@ function SidebarItem({ id, path, iconName, name }: sideBarItemProps) {
       >
         <button
           type="button"
-          className={`flex h-full w-full items-center gap-2 ${isActive ? 'border-r-4 border-grey-800' : ''}`}
+          className={`flex h-full w-full items-center gap-2 ${isActive ? 'rounded-sm border-r-4 border-grey-800' : ''}`}
         >
           <Icon name={iconName} className="text-gray-600" />
           <span className="font text-[1rem]  text-gray-600">{name}</span>
