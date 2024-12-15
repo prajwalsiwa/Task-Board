@@ -62,7 +62,7 @@ export default function App() {
         !process.env.DISABLE_DOM_TO_CODE &&
         initDomToCode()}
       <div
-        className={`${hideSideBar ? 'ml-0 h-screen w-screen  overflow-hidden' : `ml-0 flex h-screen w-screen overflow-hidden bg-white`}`}
+        className={`${hideSideBar ? 'ml-0 h-screen w-screen  overflow-hidden border-4 border-black' : `ml-0 flex h-screen w-screen overflow-hidden bg-white`}`}
       >
         <ToastContainer />
 
@@ -84,9 +84,9 @@ export default function App() {
           {getPromptDialogContent(promptDialogContent)?.content}
         </PromptDialog>
 
-        <SideBar />
+        {hideSideBar ? '' : <SideBar />}
         <div className="flex w-full flex-col">
-          <Navbar />
+          {hideSideBar ? '' : <Navbar />}
           {generateRoutes({
             routes:
               process.env.NODE_ENV !== 'production'
