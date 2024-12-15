@@ -4,7 +4,7 @@ import {
   combineReducers,
   Reducer,
 } from '@reduxjs/toolkit';
-import sidebar, { sidebarState } from '@Store/slices/sidebar';
+import sidebar, { sidebarState } from '@Store/slices/sidebarSlice';
 import common, { CommonState } from '../slices/common';
 import loader, { LoaderState } from '../slices/loader';
 

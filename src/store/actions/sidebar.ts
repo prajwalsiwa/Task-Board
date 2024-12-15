@@ -1,3 +1,3 @@
-import { sidebarSlice } from '@Store/slices/sidebar';
+import { sidebarSlice } from '@Store/slices/sidebarSlice';
 
 export const { setActiveState, deleteId } = sidebarSlice.actions;
