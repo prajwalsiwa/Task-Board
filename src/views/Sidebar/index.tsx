@@ -51,6 +51,7 @@ function SideBar() {
         {sidebarList.map(item => (
           <SidebarItem
             key={item.id}
+            id={item.id}
             name={item.name}
             path={item.path}
             iconName={item.iconName}
