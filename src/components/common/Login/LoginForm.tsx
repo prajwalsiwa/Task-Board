@@ -1,9 +1,37 @@
+/* eslint-disable no-alert */
 import Icon from '@Components/common/Icon';
 import { Button } from '@Components/RadixComponents/Button';
 // import googleIcon from '@Assets/images/google.png';
 import { Input, Label } from '@Components/common/FormUI';
+import { useNavigate } from 'react-router-dom';
+import { useMutation } from '@tanstack/react-query';
+import { signInUser } from '@Services/auth';
+import { useForm } from 'react-hook-form';
+import Spinner from '../Spinner';
 
 function LoginForm() {
+  const navigate = useNavigate();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const mutation = useMutation(signInUser, {
+    onSuccess: data => {
+      const { accessToken } = data.data;
+      localStorage.setItem('token', accessToken);
+      navigate('/');
+    },
+    onError: () => {
+      alert('Login Failed');
+    },
+  });
+
+  const onSubmit = (data: any) => {
+    const { username, password } = data;
+    mutation.mutate({ username, password, expiresInMins: 30 });
+  };
+
   return (
     <div className="flex h-screen w-full flex-col items-center   justify-center   ">
       <div className="flex  flex-col items-center justify-center gap-10 sm:w-[28rem]">
@@ -32,7 +60,10 @@ function LoginForm() {
             <span className="px-4 text-lg text-gray-500">or</span>
             <hr className="w-full border-gray-300" />
           </div>
-          <form className="flex w-full flex-col">
+          <form
+            className="flex w-full flex-col"
+            onSubmit={handleSubmit(onSubmit)}
+          >
             <div className="input-section flex w-full flex-col gap-8">
               <div className="flex w-full flex-col gap-2">
                 <Label>
@@ -41,8 +72,16 @@ function LoginForm() {
                 <Input
                   type="text"
                   className="w-full  rounded-lg border"
-                  placeholder="Prajwal Siwa"
+                  placeholder="emilys"
+                  {...register('username', {
+                    required: true,
+                    pattern: /^[a-zA-Z0-9]+([._]?[a-zA-Z0-9]+)*$/,
+                  })}
                 />
+                <span className="text-grey-400">username: emilys</span>
+                {errors?.username && (
+                  <span className="text-red-500">Enter username emilys</span>
+                )}
               </div>
               <div className="flex w-full flex-col gap-2">
                 <Label>
@@ -51,8 +90,10 @@ function LoginForm() {
                 <Input
                   type="password"
                   className="w-full rounded-lg border"
-                  placeholder="Min. 6 characters"
+                  placeholder="emilyspass"
+                  {...register('password')}
                 />
+                <span className="text-grey-400">Password: emilyspass</span>
               </div>
             </div>
             <div className="my-2 flex w-full justify-between">
@@ -70,7 +111,9 @@ function LoginForm() {
               type="submit"
               className="h-12 rounded-lg bg-blue-700 hover:bg-blue-800"
             >
-              <span className="text-md leading-10 tracking-wider">Sign In</span>
+              <span className="text-md flex gap-3 leading-10 tracking-wider ">
+                Sign In{mutation.isLoading ? <Spinner /> : ''}
+              </span>
             </Button>
             <div className="mt-4 flex w-full gap-2">
               <div className="flex items-center gap-2">
