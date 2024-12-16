@@ -7,7 +7,7 @@ export const baseURL = BASE_URL;
 export const apiURL = API_URL_V1;
 
 export const api = axios.create({
-  baseURL: API_URL_V1,
+  baseURL: 'https://dummyjson.com/',
   timeout: 5 * 60 * 1000,
   headers: {
     accept: 'application/json',
